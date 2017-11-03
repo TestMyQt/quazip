@@ -47,10 +47,11 @@ int getShort (const zlib_filefunc64_32_def* pzlib_filefunc_def, voidpf filestrea
 int getLong (const zlib_filefunc64_32_def* pzlib_filefunc_def, voidpf filestream, uLong* pX)
 {
     int i = 0;
+    unsigned char shift;
     int err = getByte(pzlib_filefunc_def,filestream,&i);
     uLong x = (uLong)i;
 
-    for(unsigned char shift = 8 ; shift < 32 ; shift+=8)
+    for(shift = 8 ; shift < 32 ; shift+=8)
     {
         if (err==ZIP_OK)
             err = getByte(pzlib_filefunc_def,filestream,&i);
@@ -72,10 +73,11 @@ int getLong64 (const zlib_filefunc64_32_def* pzlib_filefunc_def,
                            ZPOS64_T *pX)
 {
   int i = 0;
+  unsigned char shift;
   int err = getByte(pzlib_filefunc_def,filestream,&i);
   ZPOS64_T x = (ZPOS64_T)i;
 
-  for(unsigned char shift = 8 ; shift < 64 ; shift+=8)
+  for(shift = 8 ; shift < 64 ; shift+=8)
   {
       if (err==ZIP_OK)
           err = getByte(pzlib_filefunc_def,filestream,&i);
