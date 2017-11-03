@@ -16,7 +16,8 @@ HEADERS += \
         $$PWD/quazip.h \
         $$PWD/quazipnewinfo.h \
         $$PWD/unzip.h \
-        $$PWD/zip.h
+        $$PWD/zip.h \
+        $$PWD/common.h
 
 SOURCES += $$PWD/qioapi.cpp \
            $$PWD/JlCompress.cpp \
@@ -30,4 +31,5 @@ SOURCES += $$PWD/qioapi.cpp \
            $$PWD/quazipfileinfo.cpp \
            $$PWD/quazipnewinfo.cpp \
            $$PWD/unzip.c \
-           $$PWD/zip.c
+           $$PWD/zip.c \
+           $$PWD/common.c
