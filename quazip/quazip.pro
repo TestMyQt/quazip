@@ -33,6 +33,8 @@ CONFIG(staticlib): DEFINES += QUAZIP_STATIC
 # Input
 include(quazip.pri)
 
+# Include zlib headers
+include(../../zlib/zlib.pri)
 
 CONFIG(debug, debug|release) {
      mac: TARGET = $$join(TARGET,,,_debug) 
